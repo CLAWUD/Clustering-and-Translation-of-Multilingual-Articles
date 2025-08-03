@@ -1,0 +1,8 @@
+flask
+flask-cors
+scikit-learn
+langdetect
+indic-nlp-library
+uvicorn
+gunicorn
+matplotlib
