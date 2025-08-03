@@ -24,8 +24,10 @@ GRAPH_FOLDER = "static/graphs"
 os.makedirs(GRAPH_FOLDER, exist_ok=True)
 
 # Paths to stopwords files
-marathi_stopwords_file_path = 'C:/Users/abhij/OneDrive/Desktop/stopwords_marathi.txt'
-english_stopwords_file_path = 'C:/Users/abhij/OneDrive/Desktop/stopwords_english.txt'
+import os
+
+marathi_stopwords_file_path = os.getenv("MARATHI_STOPWORDS_PATH", "stopwords_marathi.txt")
+english_stopwords_file_path = os.getenv("ENGLISH_STOPWORDS_PATH", "stopwords_english.txt")
 
 # Load stopwords for Marathi and English
 def load_stopwords(file_path):
@@ -199,4 +201,6 @@ def serve_graphs(filename):
     return send_from_directory(GRAPH_FOLDER, filename)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    host = os.getenv("HOST", "0.0.0.0")
+    port = int(os.getenv("PORT", 8000))
+    app.run(debug=False, host=host, port=port)

@@ -190,10 +190,10 @@ export default function UploadPage() {
       {modalFile && (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-8 rounded-lg w-3/4 max-w-3xl">
-          
+          <MdArrowBack />
             <button
               onClick={closeModal}
-              className="absolute top-4 left-4 font-bold text-white-500 hover:text-white-900"
+              className="absolute top-4 left-4 border-2 p-2 w-20 bg-blue-500 rounded-lg font-bold text-white-500 hover:text-white cursor-pointer"
             >
               <MdArrowBack />
               Back
