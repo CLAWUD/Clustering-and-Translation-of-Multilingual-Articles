@@ -15,8 +15,8 @@ export default function UploadPage() {
   const [showResults, setShowResults] = useState(true);
   const fileInputRef = useRef(null);
 
-  // Use environment variable; fallback for local development
-  const API_BASE = process.env.REACT_APP_API_URL;
+  // Use env var, fallback to localhost for dev
+  const API_BASE = process.env.REACT_APP_API_URL ;
 
   const handleFileChange = (e) => {
     const selectedFiles = Array.from(e.target.files);
